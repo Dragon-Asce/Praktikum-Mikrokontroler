@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "author": "Farhan Maulana",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 81.5, "left": -273.8, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 74.8, "left": -76.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "servo1:GND", "esp:GND.1", "black", [ "h-67.2", "v105.7" ] ],
+    [ "servo1:V+", "esp:VIN", "red", [ "h-67.2", "v153.7", "h-134.4", "v-48" ] ],
+    [ "servo1:PWM", "esp:D2", "gold", [ "h-67.2", "v68.1" ] ]
+  ],
+  "dependencies": {}
+}
