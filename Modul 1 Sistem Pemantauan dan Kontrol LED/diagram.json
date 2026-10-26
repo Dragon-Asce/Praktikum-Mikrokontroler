@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Farhan Maulana",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 91.1, "left": -245, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 188.4, "left": 99.8, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": 178.8, "left": -15.4, "attrs": { "color": "blue" } },
+    { "type": "wokwi-led", "id": "led3", "top": 178.8, "left": -73, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "led4", "top": 178.8, "left": 42.2, "attrs": { "color": "yellow" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "led3:C", "black", [] ],
+    [ "esp:GND.1", "led2:C", "black", [] ],
+    [ "esp:GND.1", "led4:C", "black", [] ],
+    [ "esp:GND.1", "led1:C", "black", [] ],
+    [ "esp:D5", "led3:A", "green", [] ],
+    [ "esp:D18", "led2:A", "green", [] ],
+    [ "esp:D19", "led4:A", "green", [] ],
+    [ "esp:D21", "led1:A", "green", [] ]
+  ],
+  "dependencies": {}
+}
+
