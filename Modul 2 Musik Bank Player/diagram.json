@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Farhan Maulana",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 196.7, "left": -149, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 184.8,
+      "left": -27,
+      "attrs": { "volume": "1.0", "mode": "smooth" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:D2", "bz1:2", "green", [ "h0" ] ],
+    [ "esp:GND.1", "bz1:1", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
