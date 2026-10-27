@@ -510,7 +510,7 @@ void setup() {
                 moveAction = "opening";
                 Serial.println("[Tirai] Perintah Buka diterima. Memutar motor...");
                 
-                rotateStepper(HIGH, targetSteps); // Putar Searah Jarum Jam (800 step)
+                rotateStepper(LOW, targetSteps); // Putar Searah Jarum Jam (800 step)
                 
                 tiraiTerbuka = true;
                 isMoving = false;
@@ -524,7 +524,7 @@ void setup() {
                 moveAction = "closing";
                 Serial.println("[Tirai] Perintah Tutup diterima. Memutar motor...");
                 
-                rotateStepper(LOW, targetSteps); // Putar Berlawanan Jarum Jam (800 step)
+                rotateStepper(HIGH, targetSteps); // Putar Berlawanan Jarum Jam (800 step)
                 
                 tiraiTerbuka = false;
                 isMoving = false;
