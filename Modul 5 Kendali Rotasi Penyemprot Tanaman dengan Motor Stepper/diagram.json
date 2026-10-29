@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Farhan Maulana",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 100.7, "left": -245, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -63.59,
+      "left": -47.57,
+      "attrs": { "size": "17" }
+    },
+    { "type": "wokwi-a4988", "id": "driver1", "top": 110.4, "left": -100.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "driver1:GND.1", "esp:GND.1", "black", [ "h28.95", "v67.38" ] ],
+    [ "esp:3V3", "driver1:VDD", "red", [ "h124.5", "v-86.48" ] ],
+    [ "esp:D12", "driver1:STEP", "orange", [ "h-9.6", "v76.1", "h144", "v-134.4" ] ],
+    [ "esp:D13", "driver1:DIR", "#8f4814", [ "h-9.6", "v67", "h144", "v-124.8" ] ],
+    [ "driver1:RESET", "driver1:SLEEP", "green", [ "v9.6" ] ],
+    [ "esp:VIN", "driver1:VMOT", "red", [ "h-9.6", "v48", "h230.4", "v-192.08" ] ],
+    [ "esp:GND.1", "driver1:GND.2", "black", [ "h124.5", "v-124.98" ] ],
+    [ "driver1:1A", "stepper1:A+", "violet", [ "h0" ] ],
+    [ "stepper1:A-", "driver1:1B", "gray", [ "v0" ] ],
+    [ "driver1:2A", "stepper1:B+", "blue", [ "h0" ] ],
+    [ "driver1:2B", "stepper1:B-", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
