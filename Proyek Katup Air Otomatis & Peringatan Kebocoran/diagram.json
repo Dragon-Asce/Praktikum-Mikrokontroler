@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "Farhan Maulana",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 167.9, "left": -177.8, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 194.4,
+      "left": -372.6,
+      "attrs": { "volume": "1.0", "mode": "smooth" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 207.6,
+      "left": -274.6,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 343.6, "left": -393.6, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 255.6,
+      "left": -44.2,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "servo1:V+", "esp:VIN", "red", [ "h-9.6", "v-76.7", "h230.4" ] ],
+    [ "servo1:GND", "esp:GND.2", "#8f4814", [ "h-9.6", "v-48" ] ],
+    [ "servo1:PWM", "esp:D14", "blue", [ "h-19.2", "v-86.2", "h211.2", "v-38.5" ] ],
+    [ "bz1:2", "esp:D13", "gold", [ "v28.8", "h57.2" ] ],
+    [ "esp:GND.2", "bz1:1", "black", [ "h0" ] ],
+    [ "led1:A", "esp:D12", "violet", [ "v0" ] ],
+    [ "esp:GND.2", "led1:C", "black", [ "h0" ] ],
+    [ "esp:GND.1", "led2:C", "black", [ "h0" ] ],
+    [ "led2:A", "esp:D15", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
